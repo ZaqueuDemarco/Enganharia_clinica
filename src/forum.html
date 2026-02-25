@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Fórum – Engenharia & Manuais</title>
+    <link rel="stylesheet" href="forum.css">
+</head>
+<body>
+
+<header>
+    <h1>Fórum Engenharia & Manuais</h1>
+    <p>Discuta normas, manuais, equipamentos e dúvidas técnicas.</p>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="manuais.html">Manuais</a>
+        <span id="user-info"></span>
+        <button id="logout-btn" style="display:none;">Sair</button>
+    </nav>
+</header>
+
+
+<section id="auth">
+    <div id="login">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <div id="cadastro">
+        <h2>Criar Conta</h2>
+        <form id="register-form">
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</section>
+
+<main>
+    <!-- Sidebar fixa à esquerda -->
+    <aside>
+        <h2>Categorias</h2>
+        <ul>
+            <li><a href="#">Manuais ANVISA</a></li>
+            <li><a href="#">Engenharia Clínica</a></li>
+            <li><a href="#">Equipamentos Médicos</a></li>
+            <li><a href="#">Normas & RDC</a></li>
+            <li><a href="#">Dúvidas Gerais</a></li>
+        </ul>
+    </aside>
+
+    <!-- Conteúdo central -->
+    <section>
+        <div id="novo-post">
+            <h2>Criar novo tópico</h2>
+            <form>
+                <input type="text" placeholder="Título do tópico">
+                <textarea placeholder="Descreva sua dúvida, ideia ou discussão..."></textarea>
+                <button type="submit">Publicar</button>
+            </form>
+        </div>
+
+        <h2>Tópicos recentes</h2>
+        <div id="lista-posts">
+            <article class="post" data-id="1">
+                <div class="votos">
+                    <button class="up">▲</button>
+                    <span>12</span>
+                    <button class="down">▼</button>
+                </div>
+                <div class="conteudo-post">
+                    <h3><a href="#">Como interpretar a RDC 16 para equipamentos de infusão?</a></h3>
+                    <p class="meta">Postado por <strong>engenheiro_clinico</strong> · 23 comentários</p>
+                    <p class="resumo">Alguém poderia explicar, de forma prática, como aplicar a RDC 16 na rotina de manutenção?</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="rodape">
+    <div class="rodape-container">
+        <div class="rodape-col">
+            <h3>Engenharia & Manuais</h3>
+            <p>Fórum técnico independente para profissionais da área.</p>
+        </div>
+        <div class="rodape-col">
+            <h4>Links úteis</h4>
+            <ul>
+                <li><a href="manuais.html">Manuais</a></li>
+                <li><a href="forum.html">Fórum</a></li>
+                <li><a href="#">Normas ANVISA</a></li>
+            </ul>
+        </div>
+        <div class="rodape-col">
+            <h4>Contato</h4>
+            <ul>
+                <li><a href="#">Enviar sugestão</a></li>
+                <li><a href="#">Reportar erro</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="rodape-bottom">
+        © 2026 Engenharia & Manuais — Todos os direitos reservados.
+    </div>
+</footer>
+
+<script>
+    // Verifica se usuário está logado
+    fetch("/me")
+      .then(res => res.json())
+      .then(data => {
+        if (data.loggedIn) {
+          document.getElementById("user-info").textContent = "Logado como " + data.nome;
+          document.getElementById("auth").style.display = "none";
+          document.getElementById("logout-btn").style.display = "inline-block";
+        } else {
+          document.getElementById("auth").style.display = "flex";
+          document.getElementById("logout-btn").style.display = "none";
+        }
+      });
+
+    // Logout
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      fetch("/logout", { method: "POST" })
+        .then(res => res.json())
+        .then(() => {
+          alert("Você saiu da sua conta.");
+          location.reload();
+        });
+    });
+</script>
+
+
+</body>
+</html>
+

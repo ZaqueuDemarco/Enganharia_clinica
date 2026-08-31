@@ -1,0 +1,19 @@
+// Lista de manuais. Para adicionar um novo equipamento, inclua um objeto
+// aqui e faça o commit/push — só quem tem acesso de escrita neste
+// repositório consegue alterar esta lista.
+const MANUAIS = [
+  { equipamento: "Monitor Prolife C12", fabricante: "Prolife", tipo: "Monitorização", link: "https://consultas.anvisa.gov.br/api/consulta/produtos/25351577646201940/anexo/T14319473/nomeArquivo/Manual%20do%20Usu%C3%A1rio_C8,%20C12,%20C100,%20C120,%20C150_Rev02_MAR2021.pdf?Authorization=Guest" },
+  { equipamento: "Monitor Alfamed Vita 600", fabricante: "Alfamed", tipo: "Monitorização", link: "https://consultas.anvisa.gov.br/api/consulta/produtos/25351159656201709/anexo/T21764512/nomeArquivo/MAN.07.09.003.REC_07R-+Manual+do+Usu%C3%A1rio+VITA+500+e+VITA+600.pdf?Authorization=Guest" },
+  { equipamento: "Cardioversor Philips DFM100", fabricante: "Philips", tipo: "Emergência", link: "https://consultas.anvisa.gov.br/api/consulta/produtos/25351375783201507/anexo/T27478913/nomeArquivo/5.+DFM100+IFU_B+Portuguese_453564405021-L-IFU_2.0-DFM100.pdf?Authorization=Guest" },
+  { equipamento: "Ventilador de Transporte Oxymag", fabricante: "Magnamed", tipo: "Ventilação", link: "https://consultas.anvisa.gov.br/api/consulta/produtos/25351298156201574/anexo/T22503435/nomeArquivo/1600185-NE-20-26+MANUAL+DE+OPERA%C3%87%C3%83O.pdf?Authorization=Guest" },
+  { equipamento: "Ventilador Pulmonar FlexiMag Plus", fabricante: "Magnamed", tipo: "Ventilação", link: "https://consultas.anvisa.gov.br/api/consulta/produtos/25351356036201250/anexo/T16654225/nomeArquivo/110XXXX-NE-20-12-Ventiladores+de+UTI_familia+Plus.pdf?Authorization=Guest" },
+  { equipamento: "Monitor Bistos BT-770", fabricante: "Bistos", tipo: "Monitorização", link: "https://manual.macrosul.com/wp-content/uploads/2023/03/MO.BT770.V1.2020_REV.1_JUN.20.pdf" },
+  { equipamento: "Bomba de Infusão Ícatu", fabricante: "Samtronic", tipo: "Infusão", link: "https://consultas.anvisa.gov.br/api/consulta/produtos/25351253065202211/anexo/T35222024/nomeArquivo/manualdousuario_icatu_4.0_PT_AT_MP06697X_Rev04_10_2025.pdf?Authorization=Guest" },
+  { equipamento: "Cufômetro CE0123 VBM", fabricante: "VBM", tipo: "Calibração", link: "https://consultas.anvisa.gov.br/api/consulta/produtos/25351727725202122/anexo/T14934062/nomeArquivo/Manual+de+Instru%C3%A7%C3%B5es+-+Medidor+de+Cuff+Conglay.pdf?Authorization=Guest" },
+  { equipamento: "Aparelho de Anestesia Carestation 620", fabricante: "GE", tipo: "Centro Cirúrgico", link: "https://consultas.anvisa.gov.br/api/consulta/produtos/25351450863201570/anexo/T23299520/nomeArquivo/Instru%E7%F5es+de+Uso+Principal+_Acess%F3riosPartes_2076153-PT-BR_Rev2.pdf?Authorization=Guest" },
+  { equipamento: "Bisturi Elétrico Powercut 300LED", fabricante: "Medcir", tipo: "Centro Cirúrgico", link: "https://consultas.anvisa.gov.br/api/consulta/produtos/25351330416201403/anexo/T14746270/nomeArquivo/POWER+CUT+LED+-+Manual+de+Utiliza%C3%A7%C3%A3o+REV.10.pdf?Authorization=Guest" },
+  { equipamento: "Foco Cirúrgico Fixo Sky LED 160", fabricante: "KSS", tipo: "Centro Cirúrgico", link: "" },
+  { equipamento: "Termohigrômetro AK28", fabricante: "AKSO Produtos Eletrônicos", tipo: "Laboratório", link: "https://kromel.com.br/wp-content/uploads/2022/08/Manual-AK28.pdf" },
+  { equipamento: "Monitor Olidef", fabricante: "Logicare", tipo: "Monitorização", link: "https://consultas.anvisa.gov.br/api/consulta/produtos/25351706360201530/anexo/T15356455/nomeArquivo/Manual+do+Usu%C3%A1rio+Monitor+de+Paciente+Logicare.pdf?Authorization=Guest" },
+  { equipamento: "Monitor Mindray uMEC 6/7/10/12/15/15S", fabricante: "Mindray", tipo: "Monitorização", link: "https://consultas.anvisa.gov.br/api/consulta/produtos/25351454612201471/anexo/T12534481/nomeArquivo/Anexo%20IIIB-IU_80102511334.%20UMEC%2010.12.pdf?Authorization=Guest" },
+];
